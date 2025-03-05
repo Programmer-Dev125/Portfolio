@@ -1,117 +1,125 @@
 export default function Projects() {
   return (
     <section className="projects-tab">
-      <h2>Projects Tab</h2>
+      <p className="page-title">Projects Tab</p>
+      <div className="projects mt45">
+        <div className="flex-box-col align-start tab">
+          <p className="project-title page-text-gr-16 bold">
+            E-Commerce Application
+          </p>
+          <div className="flex-box-row sp-between w95 mauto align-start media-960">
+            <div className="flex-box-row sp-between w60 media-1000">
+              <div className="flex-box-col g15">
+                <p className="page-text-gr-15 lang-text">Front End</p>
+                <ul>
+                  <li className="page-text-14">HTML</li>
+                  <li className="page-text-14">CSS</li>
+                  <li className="page-text-14">React JS</li>
+                  <li className="page-text-14">Next JS</li>
+                </ul>
+              </div>
+              <div className="flex-box-col g15">
+                <p className="page-text-gr-15 lang-text">Back End</p>
+                <ul>
+                  <li className="page-text-14">NodeJS</li>
+                  <li className="page-text-14">Express</li>
+                </ul>
+              </div>
+              <div className="flex-box-col g15">
+                <p className="page-text-gr-15 lang-text">Databases</p>
+                <ul>
+                  <li className="page-text-14">MongoDB</li>
+                  <li className="page-text-14">PostgreSQL</li>
+                </ul>
+              </div>
+            </div>
+            <div className="flex-box-row sp-between btn-box w30">
+              <div className="w45">
+                <button>Site</button>
+              </div>
+              <div className="w45">
+                <button>Github</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       <div className="projects mt50">
-        <div className="tab">
-          <p className="project-title">E-Commerce Application</p>
-          <div className="flex-box-row sp-between w95 mauto align-center media-960">
-            <div className="flex-box-row sp-between w50 media-1000">
-              <div>
-                <p className="lang-text">Front End</p>
+        <div className="flex-box-col align-start tab">
+          <p className="project-title page-text-gr-16 bold">
+            Social Media Application
+          </p>
+          <div className="flex-box-row sp-between w95 mauto align-start media-960">
+            <div className="flex-box-row sp-between w60 media-1000">
+              <div className="flex-box-col g15">
+                <p className="page-text-gr-15 lang-text">Front End</p>
                 <ul>
-                  <li>HTML</li>
-                  <li>CSS</li>
-                  <li>React JS</li>
-                  <li>Next JS</li>
+                  <li className="page-text-14">HTML</li>
+                  <li className="page-text-14">CSS</li>
+                  <li className="page-text-14">React JS</li>
+                  <li className="page-text-14">Next JS</li>
                 </ul>
               </div>
-              <div>
-                <p className="lang-text">Back End</p>
+              <div className="flex-box-col g15">
+                <p className="page-text-gr-15 lang-text">Back End</p>
                 <ul>
-                  <li>NodeJS</li>
-                  <li>Express</li>
+                  <li className="page-text-14">NodeJS</li>
+                  <li className="page-text-14">Express</li>
                 </ul>
               </div>
-              <div>
-                <p className="lang-text">Databases</p>
+              <div className="flex-box-col g15">
+                <p className="page-text-gr-15 lang-text">Databases</p>
                 <ul>
-                  <li>MongoDB</li>
-                  <li>PostgreSQL</li>
+                  <li className="page-text-14">MongoDB</li>
+                  <li className="page-text-14">PostgreSQL</li>
                 </ul>
               </div>
             </div>
             <div className="flex-box-row sp-between btn-box w30">
-              <div>
+              <div className="w45">
                 <button>Site</button>
               </div>
-              <div>
+              <div className="w45">
                 <button>Github</button>
               </div>
             </div>
           </div>
         </div>
-        <div className="tab mt50">
-          <p className="project-title">Blog Application</p>
-          <div className="flex-box-row sp-between w95 mauto align-center media-960">
-            <div className="flex-box-row sp-between w50 media-1000">
-              <div>
-                <p className="lang-text">Front End</p>
+      </div>
+      <div className="projects mt50">
+        <div className="flex-box-col align-start tab">
+          <p className="project-title page-text-gr-16 bold">Blog Application</p>
+          <div className="flex-box-row sp-between w95 mauto align-start media-960">
+            <div className="flex-box-row sp-between w60 media-1000">
+              <div className="flex-box-col g15">
+                <p className="page-text-gr-15 lang-text">Front End</p>
                 <ul>
-                  <li>HTML</li>
-                  <li>CSS</li>
-                  <li>React JS</li>
-                  <li>Next JS</li>
+                  <li className="page-text-14">HTML</li>
+                  <li className="page-text-14">CSS</li>
+                  <li className="page-text-14">React JS</li>
+                  <li className="page-text-14">Next JS</li>
                 </ul>
               </div>
-              <div>
-                <p className="lang-text">Back End</p>
+              <div className="flex-box-col g15">
+                <p className="page-text-gr-15 lang-text">Back End</p>
                 <ul>
-                  <li>NodeJS</li>
-                  <li>Express</li>
+                  <li className="page-text-14">NodeJS</li>
+                  <li className="page-text-14">Express</li>
                 </ul>
               </div>
-              <div>
-                <p className="lang-text">Databases</p>
+              <div className="flex-box-col g15">
+                <p className="page-text-gr-15 lang-text">Databases</p>
                 <ul>
-                  <li>MongoDB</li>
-                  <li>PostgreSQL</li>
-                </ul>
-              </div>
-            </div>
-            <div className="flex-box-row sp-between btn-box w30">
-              <div>
-                <button>Site</button>
-              </div>
-              <div>
-                <button>Github</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="tab mt50">
-          <p className="project-title">Social Media Application</p>
-          <div className="flex-box-row sp-between w95 mauto align-center media-960">
-            <div className="flex-box-row sp-between w50 media-1000">
-              <div>
-                <p className="lang-text">Front End</p>
-                <ul>
-                  <li>HTML</li>
-                  <li>CSS</li>
-                  <li>React JS</li>
-                  <li>Next JS</li>
-                </ul>
-              </div>
-              <div>
-                <p className="lang-text">Back End</p>
-                <ul>
-                  <li>NodeJS</li>
-                  <li>Express</li>
-                </ul>
-              </div>
-              <div>
-                <p className="lang-text">Databases</p>
-                <ul>
-                  <li>MongoDB</li>
-                  <li>PostgreSQL</li>
+                  <li className="page-text-14">MongoDB</li>
+                  <li className="page-text-14">PostgreSQL</li>
                 </ul>
               </div>
             </div>
             <div className="flex-box-row sp-between btn-box w30">
-              <div>
+              <div className="w45">
                 <button>Site</button>
               </div>
-              <div>
+              <div className="w45">
                 <button>Github</button>
               </div>
             </div>

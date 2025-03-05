@@ -4,6 +4,7 @@ import Footer from "./card/footer";
 import Home from "./card/home";
 import Projects from "./card/projects";
 import Sidebar from "./sidebar";
+import ErrorPage from "./404/Errorpage";
 
 export default function Card() {
   const [isCurr, setIsCurr] = useState(window.location.pathname);
@@ -13,8 +14,7 @@ export default function Card() {
       setIsCurr(window.location.pathname);
     }
     window.addEventListener("popstate", handleHistory);
-    return () => window.removeEventListener("popstate", handleHistory);
-  }, []);
+  });
 
   function handleRoute(e) {
     e.stopPropagation();
@@ -33,19 +33,15 @@ export default function Card() {
     <div className="flex-box-row align-start">
       <Sidebar onRoute={handleRoute} active={isCurr} />
       <div className="card">
-        <div className="card-content">
+        <div className="card-content w95 mauto">
           <div className="text-end mt30 mb30">
             <span>{new Date().toDateString()}</span>
           </div>
-          <div className="screen-860 mt55 mb60">
+          <div className="">
             {isCurr === "/" && <Home />}
             {isCurr === "/contact" && <Contact />}
             {isCurr === "/projects" && <Projects />}
-            {!["/", "/contact", "/projects"].includes(isCurr) && (
-              <div>
-                <h2>404 Page</h2>
-              </div>
-            )}
+            {!["/", "/contact", "/projects"].includes(isCurr) && <ErrorPage />}
           </div>
           <div className="footer-box">
             <Footer />
@@ -54,21 +50,4 @@ export default function Card() {
       </div>
     </div>
   );
-}
-
-function Link({ to }) {
-  switch (true) {
-    case to === "/":
-      return <Home />;
-    case to === "/contact":
-      return <Contact />;
-    case to === "/projects":
-      return <Projects />;
-    default:
-      return (
-        <div>
-          <h2>404 Page</h2>
-        </div>
-      );
-  }
 }
