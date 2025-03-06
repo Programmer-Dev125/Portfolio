@@ -30,7 +30,7 @@ export default function Card() {
   }
 
   return (
-    <div className="flex-box-row align-start">
+    <div className="flex-box-row align-start isblock">
       <Sidebar onRoute={handleRoute} active={isCurr} />
       <div className="card">
         <div className="card-content w95 mauto">

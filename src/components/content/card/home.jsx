@@ -15,9 +15,8 @@ export default function Home() {
         </p>
       </div>
       <div className="skill-section">
-        <p className="skill-title">Skills</p>
-        <div className="flex-box-row sp-between align-center">
-          <div className="flex-box-row w80 sp-around align-center">
+        <div className="flex-box-row sp-between align-center skill-main">
+          <div className="flex-box-row w80 sp-around align-center skill-main-map">
             <Map onHover={(text) => setTextActive(text)} />
           </div>
           <div className="skill-section-list w18 pl25">

@@ -7,8 +7,8 @@ export default function Projects() {
           <p className="project-title page-text-gr-16 bold">
             E-Commerce Application
           </p>
-          <div className="flex-box-row sp-between w95 mauto align-start media-960">
-            <div className="flex-box-row sp-between w60 media-1000">
+          <div className="flex-box-row sp-between w95 mauto align-start media-768">
+            <div className="flex-box-row sp-between w60 media-768-row">
               <div className="flex-box-col g15">
                 <p className="page-text-gr-15 lang-text">Front End</p>
                 <ul>
@@ -49,8 +49,8 @@ export default function Projects() {
           <p className="project-title page-text-gr-16 bold">
             Social Media Application
           </p>
-          <div className="flex-box-row sp-between w95 mauto align-start media-960">
-            <div className="flex-box-row sp-between w60 media-1000">
+          <div className="flex-box-row sp-between w95 mauto align-start media-768">
+            <div className="flex-box-row sp-between w60 media-768-row">
               <div className="flex-box-col g15">
                 <p className="page-text-gr-15 lang-text">Front End</p>
                 <ul>
@@ -89,8 +89,8 @@ export default function Projects() {
       <div className="projects mt50">
         <div className="flex-box-col align-start tab">
           <p className="project-title page-text-gr-16 bold">Blog Application</p>
-          <div className="flex-box-row sp-between w95 mauto align-start media-960">
-            <div className="flex-box-row sp-between w60 media-1000">
+          <div className="flex-box-row sp-between w95 mauto align-start media-768">
+            <div className="flex-box-row sp-between w60 media-768-row">
               <div className="flex-box-col g15">
                 <p className="page-text-gr-15 lang-text">Front End</p>
                 <ul>

@@ -18,7 +18,13 @@ button:focus,
 textarea:focus {
   outline: none;
 }
-
+body.no-scroll {
+  overflow: hidden;
+  height: 100vh;
+}
+.relative {
+  position: relative;
+}
 .no-margin {
   margin: 0px;
 }

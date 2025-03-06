@@ -32,16 +32,20 @@ export default function Map({ onHover }) {
 
   return (
     <>
-      <div>
-        <svg
-          width="50"
-          height="50"
-          viewBox="0 0 50 50"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path d={web} fill="#41644A" />
-        </svg>
+      <div className="flex-box-col align-center relative">
+        <p className="skill-title">Skills</p>
+        <div>
+          <svg
+            width="50"
+            height="50"
+            viewBox="0 0 50 50"
+            fill="none"
+            className="web-svg"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path d={web} fill="#41644A" />
+          </svg>
+        </div>
       </div>
       <div
         onMouseOut={handleHoverClose}
@@ -51,8 +55,8 @@ export default function Map({ onHover }) {
         <div className={`icon-relative ${text === "html" ? "active" : ""}`}>
           <a href="https://github.com/Programmer-Dev125" target="_blank">
             <svg
-              width="29"
-              height="37"
+              width="35"
+              height="35"
               data-text="html"
               viewBox="0 0 29 37"
               fill="none"
