@@ -1,5 +1,4 @@
 import Card from "./content/card";
-import Sidebar from "./content/sidebar";
 
 export default function Sub() {
   return (
