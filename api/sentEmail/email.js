@@ -32,7 +32,7 @@ export default async function HandleEmail(model, req, res) {
 
     (async () => {
       const hasEmail = await model.exists({
-        email: { $regx: new RegExp(`^${isEmailObj.email}`, "i") },
+        email: { $regex: new RegExp(`^${isEmailObj.email}`, "i") },
       });
       if (hasEmail !== null) {
         res.writeHead(409);
@@ -44,7 +44,7 @@ export default async function HandleEmail(model, req, res) {
       }
       const isId = await model.estimatedDocumentCount();
       const toInsert = {
-        id: isId,
+        id: isId + 1,
         name: isEmailObj.name,
         subject: isEmailObj.subject,
         email: isEmailObj.email,

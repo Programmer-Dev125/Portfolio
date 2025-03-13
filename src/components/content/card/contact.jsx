@@ -6,35 +6,14 @@ export default function Contact() {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
-  function handleChange(e) {
-    switch (e.target.id) {
-      case "username":
-        setName(e.target.value);
-        break;
-      case "subject":
-        setSubject(e.target.value);
-        break;
-      case "email":
-        setEmail(e.target.value);
-        break;
-      case "message":
-        setMessage(e.target.value);
-        break;
-    }
-  }
-
   async function handleSubmit(e) {
     e.preventDefault();
-    if (!name || !subject || !email || !message) {
-      console.log("testing");
-      return;
-    }
+    if (!name || !subject || !email || !message) return;
 
     const isFetch = await fetch(
       "https://portfolio-eight-alpha-78.vercel.app/api/mongo",
       {
         method: "POST",
-
         headers: {
           "content-type": "application/json",
         },
@@ -91,7 +70,7 @@ export default function Contact() {
             type="text"
             id="username"
             value={name}
-            onChange={handleChange}
+            onChange={(e) => setName(e.target.value)}
             placeholder="Enter your name"
             required
           />
@@ -105,7 +84,7 @@ export default function Contact() {
             type="text"
             id="subject"
             value={subject}
-            onChange={handleChange}
+            onChange={(e) => setSubject(e.target.value)}
             placeholder="Enter your subject"
             required
           />
@@ -119,7 +98,7 @@ export default function Contact() {
             type="text"
             id="email"
             value={email}
-            onChange={handleChange}
+            onChange={(e) => setEmail(e.target.value)}
             placeholder="Enter your email"
             required
           />
@@ -131,7 +110,7 @@ export default function Contact() {
             type="text"
             id="message"
             value={message}
-            onChange={handleChange}
+            onChange={(e) => setMessage(e.target.value)}
             placeholder="Enter your message"
             rows={14}
             required
