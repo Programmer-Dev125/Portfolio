@@ -90,6 +90,7 @@ export default function Contact() {
           <input
             type="text"
             id="username"
+            onChange={handleChange}
             placeholder="Enter your name"
             required
           />
@@ -102,6 +103,7 @@ export default function Contact() {
           <input
             type="text"
             id="subject"
+            onChange={handleChange}
             placeholder="Enter your subject"
             required
           />
@@ -114,6 +116,7 @@ export default function Contact() {
           <input
             type="text"
             id="email"
+            onChange={handleChange}
             placeholder="Enter your email"
             required
           />
