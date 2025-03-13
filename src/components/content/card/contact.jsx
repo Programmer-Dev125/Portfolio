@@ -1,7 +1,6 @@
 import { useState } from "react";
 
 export default function Contact() {
-  const [activeError, setActiveError] = useState("");
   const [name, setName] = useState("");
   const [subject, setSubject] = useState("");
   const [email, setEmail] = useState("");
@@ -26,40 +25,53 @@ export default function Contact() {
 
   async function handleSubmit(e) {
     e.preventDefault();
-    // if (!name || !subject || !email || !message) return;
+    if (!name || !subject || !email || !message) return;
 
-    // const isFetch = await fetch(
-    //   "https://email-server-production-5068.up.railway.app",
-    //   {
-    //     method: "POST",
+    const isFetch = await fetch(
+      "https://portfolio-programmer-dev125s-projects.vercel.app/api/mongo",
+      {
+        method: "POST",
 
-    //     headers: {
-    //       "content-type": "application/json",
-    //     },
-    //     body: JSON.stringify({
-    //       name: name,
-    //       email: email,
-    //       subject: subject,
-    //       message: message,
-    //     }),
-    //   }
-    // );
-    // if (isFetch.status === 201) {
-    //   const isResp = await isFetch.json();
-    //   alert(isResp.success);
-    // } else if (isFetch.status === 409) {
-    //   const isResp = await isFetch.json();
-    //   alert(isResp.error);
-    // } else if (isFetch.status === 400) {
-    //   const isResp = await isFetch.json();
-    //   alert(isResp.error);
-    // }
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify({
+          name: name,
+          email: email,
+          subject: subject,
+          message: message,
+        }),
+      }
+    );
+    switch (isFetch.status) {
+      case 201:
+        {
+          const isResp = await isFetch.json();
+          alert(isResp.success);
+        }
+        break;
+      case 400:
+        {
+          const isResp = await isFetch.json();
+          alert(isResp.error);
+        }
+        break;
+      case 500:
+        {
+          const isResp = await isFetch.json();
+          alert(isResp.error);
+        }
+        break;
+      default:
+        alert("Invalid Request");
+        break;
+    }
 
-    // setName("");
-    // setSubject("");
-    // setEmail("");
-    // setMessage("");
-    // return;
+    setName("");
+    setSubject("");
+    setEmail("");
+    setMessage("");
+    return;
   }
 
   return (
@@ -78,11 +90,7 @@ export default function Contact() {
             placeholder="Enter your name"
             required
           />
-          <span
-            className={`condition-text ${
-              activeError === "name" ? "active" : ""
-            }`}
-          >
+          <span className={`condition-text`}>
             Name should only include characters and numbers
           </span>
         </div>
@@ -94,11 +102,7 @@ export default function Contact() {
             placeholder="Enter your subject"
             required
           />
-          <span
-            className={`condition-text ${
-              activeError === "subject" ? "active" : ""
-            }`}
-          >
+          <span className={`condition-text`}>
             Subject should only include characters and numbers
           </span>
         </div>
@@ -110,13 +114,7 @@ export default function Contact() {
             placeholder="Enter your email"
             required
           />
-          <span
-            className={`condition-text ${
-              activeError === "email" ? "active" : ""
-            }`}
-          >
-            Enter a valid gmail address
-          </span>
+          <span className={`condition-text`}>Enter a valid gmail address</span>
         </div>
         <div className="mb40">
           <label htmlFor="message">Message</label>
@@ -127,11 +125,7 @@ export default function Contact() {
             rows={14}
             required
           />
-          <span
-            className={`condition-text ${
-              activeError === "message" ? "active" : ""
-            }`}
-          >
+          <span className={`condition-text`}>
             Message shouldn't be more than 50 characters and should only include
             characters and numbers.
           </span>
