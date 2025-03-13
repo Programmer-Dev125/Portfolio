@@ -31,7 +31,7 @@ export default function Contact() {
     }
 
     const isFetch = await fetch(
-      "https://portfolio-programmer-dev125s-projects.vercel.app/api/mongo",
+      "https://portfolio-eight-alpha-78.vercel.app/api/mongo",
       {
         method: "POST",
 
