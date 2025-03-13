@@ -1,4 +1,4 @@
-import mongoose, { mongo, Schema } from "mongoose";
+import mongoose, { Schema } from "mongoose";
 import HandleEmail from "./sentEmail/email";
 
 const URL = process.env.MONGO_URL;
@@ -22,7 +22,7 @@ const isModel = conn.model("emailModel", new Schema(schemaOptions), COLL);
 export default async function handleServer(req, res) {
   res.setHeader(
     "access-control-allow-origin",
-    "https://portfolio-programmer-dev125s-projects.vercel.app"
+    "https://portfolio-eight-alpha-78.vercel.app"
   );
   res.setHeader("access-control-allow-methods", "POST");
   res.setHeader("access-control-allow-headers", "content-type, authorization");
@@ -40,6 +40,10 @@ export default async function handleServer(req, res) {
   }
 
   switch (req.method) {
+    case "OPTIONS":
+      res.writeHead(200);
+      res.end();
+      break;
     case "POST":
       HandleEmail(isModel, req, res);
       break;
