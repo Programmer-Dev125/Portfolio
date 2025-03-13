@@ -362,18 +362,19 @@
   height: 100%;
   z-index: 1;
   display: flex;
-  align-items: center;
+  align-items: start;
   justify-content: center;
 }
 .spinner-fix .spinner-fix-content {
   background-color: #41644a;
   width: fit-content;
   text-align: center;
-  border-radius: 8px;
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px;
   padding: 12px 15px;
 }
 .spinner-fix .spinner-fix-content p {
-  font-size: 18px;
+  font-size: 16px;
   color: #ffffff;
   margin: 0px;
 }
@@ -433,7 +434,7 @@
     width: 100%;
     left: 0;
     top: 0;
-    z-index: 1;
+    z-index: 100;
     background-color: rgba(0, 0, 0, 0.1);
     position: fixed;
     height: 100%;
@@ -446,7 +447,7 @@
     margin: 0px;
     top: 60px;
     border-top-left-radius: 20px;
-    z-index: 2;
+    z-index: 200;
     transition: width 0.3s ease-in-out;
   }
   .sidebar.mob {
@@ -497,6 +498,17 @@
   }
   .sidebar .content ul:nth-child(1) .menu-icon.active {
     display: none;
+  }
+  .contact-page .contact-form input {
+    width: 70%;
+  }
+  .contact-page .contact-form textarea {
+    width: 90%;
+  }
+
+  .contact-page .contact-form .mb40 input {
+    max-width: 100% !important;
+    box-sizing: border-box;
   }
 }
 
