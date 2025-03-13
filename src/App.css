@@ -367,10 +367,10 @@
 }
 .spinner-fix .spinner-fix-content {
   background-color: #41644a;
-  width: 10%;
+  width: fit-content;
   text-align: center;
   border-radius: 8px;
-  padding: 12px 0px;
+  padding: 12px 15px;
 }
 .spinner-fix .spinner-fix-content p {
   font-size: 18px;
@@ -428,7 +428,6 @@
   }
   .card {
     min-width: 100%;
-    z-index: -1;
   }
   .pos-fixed-sidebar.mob {
     width: 100%;
