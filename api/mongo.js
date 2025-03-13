@@ -1,11 +1,12 @@
 import mongoose, { Schema } from "mongoose";
-import HandleEmail from "./sentEmail/email";
+import HandleEmail from "./sentEmail/email.js";
 
 const URL = process.env.MONGO_URL;
 const COLL = process.env.COLLECTION;
 const apiKey = process.env.API_KEY;
 
 const conn = await mongoose.createConnection(URL).asPromise();
+
 if (!conn) {
   throw new Error("error connecting to database");
 }
@@ -24,7 +25,7 @@ export default async function handleServer(req, res) {
     "access-control-allow-origin",
     "https://portfolio-eight-alpha-78.vercel.app"
   );
-  res.setHeader("access-control-allow-methods", "POST");
+  res.setHeader("access-control-allow-methods", "POST, OPTIONS");
   res.setHeader("access-control-allow-headers", "content-type, authorization");
   res.setHeader("content-type", "application/json");
 
