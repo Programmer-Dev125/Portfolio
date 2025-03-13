@@ -1,10 +1,16 @@
 import { useState } from "react";
+import Spinner from "./spinner";
 
-export default function Contact() {
+export default function Contact({ onSending }) {
   const [name, setName] = useState("");
   const [subject, setSubject] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [isRespMessage, setIsRespMessage] = useState({
+    message: "mail is sent",
+    isError: false,
+  });
+  const [isReceived, setIsReceived] = useState(false);
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -26,33 +32,80 @@ export default function Contact() {
         }),
       }
     );
+    onSending(true);
+    document.body.classList.add("no-scroll");
     switch (isFetch.status) {
       case 201:
         {
           const isResp = await isFetch.json();
-          alert(isResp.success);
+          setIsReceived(true);
+          setIsRespMessage({
+            message: isResp.success,
+            isError: false,
+          });
+          onSending(false);
+          document.body.classList.remove("no-scroll");
+          setTimeout(() => {
+            setIsReceived(false);
+          }, 2000);
         }
         break;
       case 400:
         {
           const isResp = await isFetch.json();
-          alert(isResp.error);
+          setIsReceived(true);
+          setIsRespMessage({
+            message: isResp.error,
+            isError: true,
+          });
+          onSending(false);
+          document.body.classList.remove("no-scroll");
+          setTimeout(() => {
+            setIsReceived(false);
+          }, 2000);
         }
         break;
       case 500:
         {
           const isResp = await isFetch.json();
-          alert(isResp.error);
+          setIsReceived(true);
+          setIsRespMessage({
+            message: isResp.error,
+            isError: true,
+          });
+          onSending(false);
+          document.body.classList.remove("no-scroll");
+          setTimeout(() => {
+            setIsReceived(false);
+          }, 2000);
         }
         break;
       case 409:
         {
           const isResp = await isFetch.json();
-          alert(isResp.error);
+          setIsReceived(true);
+          setIsRespMessage({
+            message: isResp.error,
+            isError: true,
+          });
+          onSending(false);
+          document.body.classList.remove("no-scroll");
+          setTimeout(() => {
+            setIsReceived(false);
+          }, 2000);
         }
         break;
       default:
-        alert("Invalid Request");
+        setIsReceived(true);
+        setIsRespMessage({
+          message: "Invalid Request",
+          isError: true,
+        });
+        onSending(false);
+        document.body.classList.remove("no-scroll");
+        setTimeout(() => {
+          setIsReceived(false);
+        }, 2000);
         break;
     }
 
@@ -131,6 +184,17 @@ export default function Contact() {
           <button>Send Mail</button>
         </div>
       </form>
+      {isReceived && (
+        <div className="message-fix">
+          <div
+            className={`message-fix-content ${
+              isRespMessage.isError ? "active" : ""
+            }`}
+          >
+            <p>{isRespMessage.message}</p>
+          </div>
+        </div>
+      )}
     </section>
   );
 }

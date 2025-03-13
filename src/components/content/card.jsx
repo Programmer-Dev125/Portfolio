@@ -5,9 +5,11 @@ import Home from "./card/home";
 import Projects from "./card/projects";
 import Sidebar from "./sidebar";
 import ErrorPage from "./404/Errorpage";
+import Spinner from "./card/spinner.jsx";
 
 export default function Card() {
   const [isCurr, setIsCurr] = useState(window.location.pathname);
+  const [isSending, setIsSending] = useState(false);
 
   useEffect(() => {
     function handleHistory() {
@@ -30,31 +32,36 @@ export default function Card() {
   }
 
   return (
-    <div className="flex-box-row align-start isblock">
-      <Sidebar onRoute={handleRoute} active={isCurr} />
-      <div className="card">
-        <div className="card-content w95 mauto">
-          <div className="text-end mt30 mb30">
-            <span>{new Date().toDateString()}</span>
-          </div>
-          <div className="">
-            {isCurr === "/" && <Home />}
-            {isCurr === "/contact" && <Contact />}
-            {isCurr === "/projects" && <Projects />}
-            {!["/", "/contact", "/projects"].includes(isCurr) && (
-              <ErrorPage
-                toSent={(val) => {
-                  setIsCurr(val);
-                  window.history.pushState({}, "", "/");
-                }}
-              />
-            )}
-          </div>
-          <div className="footer-box">
-            <Footer />
+    <>
+      <div className="flex-box-row align-start isblock">
+        <Sidebar onRoute={handleRoute} active={isCurr} />
+        <div className="card">
+          <div className="card-content w95 mauto">
+            <div className="text-end mt30 mb30">
+              <span>{new Date().toDateString()}</span>
+            </div>
+            <div className="">
+              {isCurr === "/" && <Home />}
+              {isCurr === "/contact" && (
+                <Contact onSending={(val) => setIsSending(val)} />
+              )}
+              {isCurr === "/projects" && <Projects />}
+              {!["/", "/contact", "/projects"].includes(isCurr) && (
+                <ErrorPage
+                  toSent={(val) => {
+                    setIsCurr(val);
+                    window.history.pushState({}, "", "/");
+                  }}
+                />
+              )}
+            </div>
+            <div className="footer-box">
+              <Footer />
+            </div>
           </div>
         </div>
       </div>
-    </div>
+      {isSending && <Spinner />}
+    </>
   );
 }
