@@ -14,6 +14,10 @@ export default function Contact({ onSending }) {
   async function handleSubmit(e) {
     e.preventDefault();
     if (!name || !subject || !email || !message) return;
+    if (name.length > 15 || subject.length > 15 || message.length > 50) {
+      alert("Check fields length");
+      return;
+    }
 
     onSending(true);
     document.body.classList.add("no-scroll");
@@ -62,7 +66,7 @@ export default function Contact({ onSending }) {
           document.body.classList.remove("no-scroll");
           setTimeout(() => {
             setIsReceived(false);
-          }, 2000);
+          }, 3000);
         }
         break;
       case 500:
@@ -77,7 +81,7 @@ export default function Contact({ onSending }) {
           document.body.classList.remove("no-scroll");
           setTimeout(() => {
             setIsReceived(false);
-          }, 2000);
+          }, 3000);
         }
         break;
       case 409:
@@ -92,7 +96,7 @@ export default function Contact({ onSending }) {
           document.body.classList.remove("no-scroll");
           setTimeout(() => {
             setIsReceived(false);
-          }, 2000);
+          }, 3000);
         }
         break;
       default:
@@ -105,7 +109,7 @@ export default function Contact({ onSending }) {
         document.body.classList.remove("no-scroll");
         setTimeout(() => {
           setIsReceived(false);
-        }, 2000);
+        }, 3000);
         break;
     }
 
@@ -135,7 +139,8 @@ export default function Contact({ onSending }) {
             required
           />
           <span className={`condition-text`}>
-            Name should only include characters and numbers
+            Name should only include characters and numbers, should be less than
+            15
           </span>
         </div>
         <div className="mb40">
@@ -149,7 +154,8 @@ export default function Contact({ onSending }) {
             required
           />
           <span className={`condition-text`}>
-            Subject should only include characters and numbers
+            Subject should only include characters and numbers, should be less
+            than 15
           </span>
         </div>
         <div className="mb40">
