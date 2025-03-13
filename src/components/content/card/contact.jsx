@@ -1,5 +1,4 @@
 import { useState } from "react";
-import Spinner from "./spinner";
 
 export default function Contact({ onSending }) {
   const [name, setName] = useState("");
@@ -15,6 +14,9 @@ export default function Contact({ onSending }) {
   async function handleSubmit(e) {
     e.preventDefault();
     if (!name || !subject || !email || !message) return;
+
+    onSending(true);
+    document.body.classList.add("no-scroll");
 
     const isFetch = await fetch(
       "https://portfolio-eight-alpha-78.vercel.app/api/mongo",
@@ -32,8 +34,6 @@ export default function Contact({ onSending }) {
         }),
       }
     );
-    onSending(true);
-    document.body.classList.add("no-scroll");
     switch (isFetch.status) {
       case 201:
         {
