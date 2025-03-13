@@ -45,6 +45,12 @@ export default function Contact() {
           alert(isResp.error);
         }
         break;
+      case 409:
+        {
+          const isResp = await isFetch.json();
+          alert(isResp.error);
+        }
+        break;
       default:
         alert("Invalid Request");
         break;
