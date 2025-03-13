@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+@import "@fontsource/roboto";
 
 html {
   scroll-behavior: smooth;
