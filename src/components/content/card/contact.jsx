@@ -25,7 +25,10 @@ export default function Contact() {
 
   async function handleSubmit(e) {
     e.preventDefault();
-    if (!name || !subject || !email || !message) return;
+    if (!name || !subject || !email || !message) {
+      console.log("testing");
+      return;
+    }
 
     const isFetch = await fetch(
       "https://portfolio-programmer-dev125s-projects.vercel.app/api/mongo",
