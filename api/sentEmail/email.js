@@ -1,3 +1,5 @@
+import nodemailer from "nodemailer";
+
 export default async function HandleEmail(model, req, res) {
   let isEmailBody = "";
   req.on("data", (data) => {
@@ -45,10 +47,7 @@ export default async function HandleEmail(model, req, res) {
       const isId = await model.estimatedDocumentCount();
       const toInsert = {
         id: isId + 1,
-        name: isEmailObj.name,
-        subject: isEmailObj.subject,
         email: isEmailObj.email,
-        message: isEmailObj.message,
       };
       const toCreate = await model.create([toInsert], { ordered: true });
       if (!toCreate) {
@@ -56,6 +55,30 @@ export default async function HandleEmail(model, req, res) {
         return res.end(
           JSON.stringify({ error: "server failed to submit message" })
         );
+      }
+      const transporter = nodemailer.createTransport({
+        host: "smtp.sendgrid.net",
+        port: 587,
+        auth: {
+          user: process.env.SEND_USER,
+          pass: process.env.SEND_KEY,
+        },
+      });
+      const mailSent = await transporter.sendMail({
+        from: process.env.SEND_EMAIL,
+        to: isEmailObj.email,
+        subject: "From Abdul Ahad - Portfolio Website",
+        text: "Your message has been received will contact you shortly! Abdul Ahad - Programmerdev125@gmail.com",
+      });
+      const toSelfMail = await transporter.sendMail({
+        from: process.env.SEND_EMAIL,
+        to: process.env.SEND_EMAIL,
+        subject: `From ${isEmailObj.email}`,
+        text: isEmailObj.message,
+      });
+      if (mailSent.rejected.length > 0 || toSelfMail.rejected.length > 0) {
+        res.writeHead(500);
+        return res.end(JSON.stringify({ error: "Server failed to send mail" }));
       }
       res.writeHead(201);
       res.end(
