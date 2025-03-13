@@ -18,7 +18,7 @@ export default async function HandleEmail(model, req, res) {
       /^[0-9A-Za-z ]*$/.test(isEmailObj.name) ||
       /^[0-9A-Za-z ]*$/.test(isEmailObj.message) ||
       /^[0-9A-Za-z ]*$/.test(isEmailObj.subject);
-    const isEmail = /^[A-Za-z0-9]*@gmail\.com$/.test(isEmailBody.email);
+    const isEmail = /^[A-Za-z0-9]*@gmail\.com$/.test(isEmailObj.email);
 
     if (!isName) {
       res.writeHead(400);
@@ -32,7 +32,7 @@ export default async function HandleEmail(model, req, res) {
 
     (async () => {
       const hasEmail = await model.exists({
-        email: { $regex: new RegExp(`^${isEmailObj.email}`, "i") },
+        email: { $regex: new RegExp(`^${isEmailObj.email}`) },
       });
       if (hasEmail !== null) {
         res.writeHead(409);
