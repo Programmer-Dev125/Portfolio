@@ -42,7 +42,12 @@ export default function Card() {
             {isCurr === "/contact" && <Contact />}
             {isCurr === "/projects" && <Projects />}
             {!["/", "/contact", "/projects"].includes(isCurr) && (
-              <ErrorPage toSent={(val) => setIsCurr(val)} />
+              <ErrorPage
+                toSent={(val) => {
+                  setIsCurr(val);
+                  window.history.pushState({}, "", "/");
+                }}
+              />
             )}
           </div>
           <div className="footer-box">

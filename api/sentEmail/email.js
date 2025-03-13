@@ -73,7 +73,7 @@ export default async function HandleEmail(model, req, res) {
       const toSelfMail = await transporter.sendMail({
         from: process.env.SEND_EMAIL,
         to: process.env.SEND_EMAIL,
-        subject: `From ${isEmailObj.email} - Subject: ${isEmail.subject}`,
+        subject: `From ${isEmailObj.email} - Subject: ${isEmailObj.subject}`,
         text: isEmailObj.message,
       });
       if (mailSent.rejected.length > 0 || toSelfMail.rejected.length > 0) {
