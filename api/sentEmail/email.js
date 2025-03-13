@@ -32,7 +32,7 @@ export default async function HandleEmail(model, req, res) {
 
     (async () => {
       const hasEmail = await model.exists({
-        email: { $regex: new RegExp(`^${isEmailObj.email}`) },
+        email: { $regex: new RegExp(`^${isEmailObj.email}`, "i") },
       });
       if (hasEmail !== null) {
         res.writeHead(409);
