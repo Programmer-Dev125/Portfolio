@@ -16,6 +16,7 @@ export default function Contact() {
         method: "POST",
         headers: {
           "content-type": "application/json",
+          authorization: "QWJkdWxBaGFkVGh1cnNkYXkxM01hcmNoMjAyNQ==",
         },
         body: JSON.stringify({
           name: name,
