@@ -20,9 +20,13 @@ const schemaOptions = {
 const isModel = conn.model("emailModel", new Schema(schemaOptions), COLL);
 
 export default async function handleServer(req, res) {
-  res.setHeader("access-control-allow-origin", "");
+  res.setHeader(
+    "access-control-allow-origin",
+    "https://portfolio-programmer-dev125s-projects.vercel.app"
+  );
   res.setHeader("access-control-allow-methods", "POST");
   res.setHeader("access-control-allow-headers", "content-type, authorization");
+  res.setHeader("content-type", "application/json");
 
   const isAuthorize = req.headers.authorization;
   if (!isAuthorize) {
