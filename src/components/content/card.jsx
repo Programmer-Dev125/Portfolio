@@ -14,7 +14,7 @@ export default function Card() {
       setIsCurr(window.location.pathname);
     }
     window.addEventListener("popstate", handleHistory);
-  });
+  }, [isCurr]);
 
   function handleRoute(e) {
     e.stopPropagation();
@@ -41,7 +41,9 @@ export default function Card() {
             {isCurr === "/" && <Home />}
             {isCurr === "/contact" && <Contact />}
             {isCurr === "/projects" && <Projects />}
-            {!["/", "/contact", "/projects"].includes(isCurr) && <ErrorPage />}
+            {!["/", "/contact", "/projects"].includes(isCurr) && (
+              <ErrorPage toSent={(val) => setIsCurr(val)} />
+            )}
           </div>
           <div className="footer-box">
             <Footer />
