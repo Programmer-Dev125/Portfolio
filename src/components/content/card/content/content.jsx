@@ -46,7 +46,10 @@ export default function Content() {
         </a>
       </li>
       <li>
-        <a href="https://www.upwork.com/" target="_blank">
+        <a
+          href="https://www.upwork.com/freelancers/~01a6beb560ef4305b4"
+          target="_blank"
+        >
           <svg
             width="40"
             height="40"

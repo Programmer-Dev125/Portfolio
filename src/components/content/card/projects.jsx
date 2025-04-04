@@ -35,10 +35,20 @@ export default function Projects() {
             </div>
             <div className="flex-box-row sp-between btn-box w30">
               <div className="w45">
-                <button>Site</button>
+                <a
+                  href="https://e-commerce-gamma-one-65.vercel.app/"
+                  target="_blank"
+                >
+                  <button>Site</button>
+                </a>
               </div>
               <div className="w45">
-                <button>Github</button>
+                <a
+                  href="https://github.com/Programmer-Dev125/E-Commerce"
+                  target="_blank"
+                >
+                  <button>Github</button>
+                </a>
               </div>
             </div>
           </div>
@@ -77,10 +87,20 @@ export default function Projects() {
             </div>
             <div className="flex-box-row sp-between btn-box w30">
               <div className="w45">
-                <button>Site</button>
+                <a
+                  href="https://social-media-application-eight.vercel.app"
+                  target="_blank"
+                >
+                  <button>Site</button>
+                </a>
               </div>
               <div className="w45">
-                <button>Github</button>
+                <a
+                  href="https://github.com/Programmer-Dev125/Social-Media-Application"
+                  target="_blank"
+                >
+                  <button>Github</button>
+                </a>
               </div>
             </div>
           </div>
@@ -88,7 +108,7 @@ export default function Projects() {
       </div>
       <div className="projects mt50">
         <div className="flex-box-col align-start tab">
-          <p className="project-title page-text-gr-16 bold">Blog Application</p>
+          <p className="project-title page-text-gr-16 bold">CRUD Application</p>
           <div className="flex-box-row sp-between w95 mauto align-start media-768">
             <div className="flex-box-row sp-between w60 media-768-row">
               <div className="flex-box-col g15">
@@ -117,10 +137,20 @@ export default function Projects() {
             </div>
             <div className="flex-box-row sp-between btn-box w30">
               <div className="w45">
-                <button>Site</button>
+                <a
+                  href="https://crud-application-nine-kohl.vercel.app"
+                  target="_blank"
+                >
+                  <button>Site</button>
+                </a>
               </div>
               <div className="w45">
-                <button>Github</button>
+                <a
+                  href="https://github.com/Programmer-Dev125/CRUD-Application"
+                  target="_blank"
+                >
+                  <button>Github</button>
+                </a>
               </div>
             </div>
           </div>
