@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./global.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <title>Abdul Ahad - Portfolio</title>
+    <style>
+        body {
+            cursor: none;
+        }
+
+        #mouse{
+            position: fixed;
+            width: 30px;
+            height: 30px;
+            background-color: rgba(0, 0, 0, 0.5);
+            border: 2px solid #fff;
+            border-radius: 50%;
+            z-index: 9999;
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+        }
+
+        @media (max-width: 768px) {
+            body {
+                cursor: default
+            }
+
+            #mouse {
+                display: none;
+            }
+
+        }
+
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <div id="mouse"></div>
+    <script>
+        
+        const elem = document.getElementById("mouse");
+        const mouseCoordinates = (e) => {
+            elem.style.top = e.clientY + "px";
+            elem.style.left = e.clientX + "px";
+        }
+
+        window.addEventListener("mouseenter",mouseCoordinates);
+        window.addEventListener("mousemove", mouseCoordinates);
+
+    </script>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

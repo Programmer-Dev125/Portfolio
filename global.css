@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+:root{
+    --lk: #607B96;
+    --bd: #1E2D3D;
+    --or: #FEA55F;
+    --bl: #011627;
+    --pp: #4D5BCE;
+    --gr: #43D9AD;
+    --sec: #E5E9F0;
+    --lg-red: #E99287;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    scroll-behavior: smooth;
+    background-color: #010C15;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+input:focus{
+    outline: none;
+}
+
+button:focus{
+    outline: none;
+}
+
+.scroll-hidden{
+    scrollbar-width: 0;
+}
+
+.scroll-hidden::-webkit-scrollbar{
+    display: none;
+}
+
+@media (max-width: 900px){
+    .w900_g1{
+        display: grid;
+        gap: 50px;
+        grid-template-columns: auto;
+    }
+    .w900_center{
+        justify-self: center;
+    }
+}
+
+@media (max-width: 850px){
+    .w850_g1{
+        display: grid;
+        grid-template-columns: auto;
+    }
+}
+
+@media (min-width: 601px){
+    .w900_upperHidden{
+        display: none;
+    }
+}
+
+@media (max-width: 600px){
+    .w600_hidden{
+        display: none;
+    }
+}
+
+@media (max-width: 450px){
+    .w450_full{
+        margin-top: 0;
+        margin-bottom: 0;
+        width: 100%;
+    }
+}
