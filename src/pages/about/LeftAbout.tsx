@@ -26,7 +26,7 @@ export default function LeftAbout( { tab, onChange, onTab }: Props ){
         onTab(currentTab);
     }, [currentTab]);
 
-    const onClick = (link: string, desc: string, text: string) => {
+    const onClick = (link: string, desc: string) => {
         switch(link){
             case "email":
                 openEmail(() => {
@@ -94,7 +94,7 @@ export default function LeftAbout( { tab, onChange, onTab }: Props ){
                     <RippleButton
                         className="flex flex-row gap-4 items-start group py-5"
                         style={{ paddingLeft: belowX, paddingRight:belowX / 2  }}
-                        onClick={() => onClick(contact.link, contact.desc, contact.text)}
+                        onClick={() => onClick(contact.link, contact.desc)}
                     >
                         <div className="w-[25px] h-[25px] flex-shrink-0">
                             <contact.Icon size={25} color={contact.color} />
