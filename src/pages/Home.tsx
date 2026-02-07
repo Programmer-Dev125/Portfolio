@@ -1,15 +1,9 @@
-import { useRef } from "react";
 import { TextGenerator, Carousel } from "../../components/custom";
 import { Code } from "../../components/ui";
 import { images } from "../../data/uiData";
-import useObserver from "../../hooks/useObserver";
 
 export default function Home(){
     
-    const upperRef = useRef<HTMLDivElement | null>(null);
-    const belowRef = useRef<HTMLDivElement | null>(null);
-    const upperDimensions = useObserver({ref: upperRef});
-    const belowDimensions = useObserver({ref: belowRef});
 
     return (
         <>
@@ -49,7 +43,6 @@ export default function Home(){
                     <div className="min-w-[300px] h-[700px] bg-black rounded-xl py-2 relative">
                         <div className="bg-white w-[95%] mx-auto h-full rounded-xl relative">
                             <div 
-                                ref={upperRef} 
                                 className="absolute top-0 flex justify-center items-center w-full py-2"
                                 style={{
                                     zIndex: 2
@@ -76,7 +69,7 @@ export default function Home(){
                                     />
                                 )}
                             </Carousel>
-                            <div ref={belowRef} className="absolute bottom-0 w-full bg-black flex justify-center items-center py-2">
+                            <div className="absolute bottom-0 w-full bg-black flex justify-center items-center py-2">
                                 <div className="w-[20px] h-[20px] bg-white rounded-full" />
                             </div>
                         </div>

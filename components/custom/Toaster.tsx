@@ -1,5 +1,5 @@
 import { createPortal } from "react-dom";
-import React, { useEffect, useLayoutEffect, useRef } from "react"
+import React, { useEffect, useRef } from "react"
 import useDimensions from "../../hooks/useDimensions";
 
 type Props = {

@@ -1,7 +1,4 @@
 import type React from "react"
-import useDimensions from "../../hooks/useDimensions"
-import { useEffect, useRef } from "react"
-import useObserver from "../../hooks/useObserver"
 
 type Props = {
     children?: React.ReactNode,

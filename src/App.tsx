@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import {Card, Content} from "../components/ui";
 import Menu from "./Menu";
 import useDimensions from "../hooks/useDimensions";
