@@ -182,7 +182,7 @@ export const mernProject = [
         shortDesc: "// Mern Stack App",
         desc: "I built a full-featured travel website using the MERN Stack (MongoDB, Express.js, React, and Node.js) to deliver a fast and seamless user experience. The platform includes dynamic destination listings, secure user authentication, and responsive design powered by React. With a robust Node.js and Express backend and MongoDB for scalable data management, the site ensures performance, reliability, and smooth real-time interactions.",
         projectTitle: "Travel Website",
-        link: "https://fly-with-us-eta.vercel.app/",
+        link: "https://fly-with-us-seven.vercel.app/",
         color:"var(--gr)",
         Icon: FaReact
     }
