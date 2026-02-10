@@ -1,5 +1,6 @@
 #!/bin/bash
 
 git add .
-git commit -m "s"
+read -p "CommitName: " commit
+git commit -m $commit
 git push -u origin main
