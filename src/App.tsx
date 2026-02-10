@@ -13,7 +13,7 @@ export default function App(){
     const [current, setCurrent] = useState("home");
     const menuRef = useRef<HTMLDivElement | null>(null);
     const footerRef = useRef<HTMLDivElement | null>(null);
-    const { screenWidth, screenHeight, outWidth, outHeight } = useDimensions({})
+    const { screenWidth, outWidth, outHeight } = useDimensions({})
     const menuDimensions = useObserver({ref: menuRef});
     const footerDimensions = useObserver({ref: footerRef})
 
