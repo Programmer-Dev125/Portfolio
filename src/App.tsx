@@ -23,7 +23,7 @@ export default function App(){
                 positions={{
                     ...(current === "about" || current === "projects") ? {
                         left: outWidth / 7,
-                        bottom: screenHeight <= 900 ? -(outHeight / 3) : 30
+                        bottom: 30
                     } : {
                         top: menuDimensions.height + (screenWidth <= 900 ? outHeight / 1.2 : (outHeight / 5) / 2),
                         right: outWidth / 4,
