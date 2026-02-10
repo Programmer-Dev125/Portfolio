@@ -58,7 +58,7 @@ export const contacts = [
         text: "Phone",
         Icon: BsPhoneFill,
         color: "var(--or)",
-        desc: "+92 333-1916196",
+        desc: "+92 305-9024466",
         link: "copy"
     },
     {

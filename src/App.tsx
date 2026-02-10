@@ -13,7 +13,7 @@ export default function App(){
     const [current, setCurrent] = useState("home");
     const menuRef = useRef<HTMLDivElement | null>(null);
     const footerRef = useRef<HTMLDivElement | null>(null);
-    const { screenWidth, screenHeight } = useDimensions({})
+    const { screenWidth, screenHeight, outWidth, outHeight } = useDimensions({})
     const menuDimensions = useObserver({ref: menuRef});
     const footerDimensions = useObserver({ref: footerRef})
 
@@ -22,11 +22,11 @@ export default function App(){
             <Card
                 positions={{
                     ...(current === "about" || current === "projects") ? {
-                        left: screenWidth / 7,
-                        bottom: screenHeight <= 768 ? -(screenHeight / 2) : 30
+                        left: outWidth / 7,
+                        bottom: screenHeight <= 768 ? -(outHeight / 2) : 30
                     } : {
-                        top: menuDimensions.height + (screenWidth <= 900 ? screenHeight / 1.2 : (screenWidth / 5) / 2),
-                        right: screenWidth / 4,
+                        top: menuDimensions.height + (screenWidth <= 900 ? outHeight / 1.2 : (outHeight / 5) / 2),
+                        right: outWidth / 4,
                     }
                 }}
                 upperCircle={{
